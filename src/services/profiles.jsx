@@ -9,19 +9,19 @@ export async function getProfile(userId) {
   return parseData(request);
 }
 
-export async function updateProfile({ name, email, bio, birthday }) {
+export async function updateProfile({ name, email, bio }) {
   const request = await client
     .from('profiles')
-    .update({ name, bio, birthday })
+    .update({ name, bio })
     .match({ email })
     .single();
   return parseData(request);
 }
 
-export async function createProfile({ name, email, bio, birthday }) {
+export async function createProfile({ name, email, bio }) {
   const request = await client
     .from('profiles')
-    .insert({ name, email, bio, birthday })
+    .insert({ name, email, bio })
     .single();
   return parseData(request);
 }
