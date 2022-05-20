@@ -4,6 +4,7 @@ import { UserProvider } from "./context/UserContext";
 import Auth from "./views/Auth/Auth";
 import Home from "./views/Home/Home";
 import ProfileView from "./views/Profile/ProfileView";
+import Header from "./components/Header/Header";
 
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
     <>
     <UserProvider>
       <Router>
+        <Header />
         <Switch>
           <Route path='/login'>
             <Auth />

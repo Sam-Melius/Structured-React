@@ -1,8 +1,8 @@
-import React from 'react'
+import { useState } from 'react'
 import { useForm } from '../../hooks/useForm';
 
-export default function UserForm() {
-  const { formState, handleChange } = userForm({
+export default function UserForm({ label, onSubmit }) {
+  const { formState, handleChange } = useForm({
         email: '',
         password: '',
       });

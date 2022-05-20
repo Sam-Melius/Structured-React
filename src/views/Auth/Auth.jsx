@@ -2,7 +2,9 @@ import { Redirect, useHistory, useLocation, Link } from 'react-router-dom';
 import UserForm from '../../components/UserForm/UserForm';
 import { useAuth } from '../../hooks/user';
 
-export default function Auth() {
+const PROFILE_PATH = '/profile';
+
+export default function Auth({ isSigningUp = false }) {
   const history = useHistory();
   const location = useLocation();
   const { loggedIn, signUp, signIn } = useAuth();

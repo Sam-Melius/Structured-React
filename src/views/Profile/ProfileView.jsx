@@ -27,6 +27,8 @@ export default function ProfileView() {
             email={email} />
         </>
     )
+
+    
   }
 
   
