@@ -1,6 +1,6 @@
 import { Redirect, useHistory, useLocation, Link } from 'react-router-dom';
-import UserForm from '../components/UserForm';
-import { useAuth } from '../hooks/user';
+import UserForm from '../../components/UserForm/UserForm';
+import { useAuth } from '../../hooks/user';
 
 export default function Auth() {
   const history = useHistory();

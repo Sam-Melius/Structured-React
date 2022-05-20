@@ -1,8 +1,9 @@
-import React from 'react'
-import ProfileForm from '../components/Profile/ProfileForm';
-import { useUser } from '../hooks/user'
+import React from 'react';
+import Profile from '../../components/Profile/Profile';
+import ProfileForm from '../../components/Profile/ProfileForm';
+import { useUser } from '../../hooks/user';
 
-export default function Profile() {
+export default function ProfileView() {
   const { user, profile, loaded, create } = useUser();
 
   if(!loaded) return null;

@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { UserProvider } from "./context/UserContext";
-import Auth from "./views/Auth";
-import Profile from './views/Profile';
-import Home from "./views/Home";
+import Auth from "./views/Auth/Auth";
+import Home from "./views/Home/Home";
+import ProfileView from "./views/Profile/ProfileView";
 
 
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
             <Auth isSigningUp />
           </Route>
           <PrivateRoute path="/profile">
-            <Profile />
+            <ProfileView />
           </PrivateRoute>
           <Route path="/">
             <Home />
