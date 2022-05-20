@@ -6,9 +6,15 @@ export default function Home() {
 
   return (
     <>
+          {loggedIn ? (
+        <Link to="/profile">View your profile</Link>
+      ) : (
+        <>
           <Link to="/register">Create Account</Link>
           {' or '}
           <Link to="/login">Sign In</Link>
+        </>
+      )}
         </>
   )
 }

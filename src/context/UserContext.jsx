@@ -10,11 +10,11 @@ export const UserProvider = ({ children }) => {
         currentUser ? { id: currentUser.id, email: currentUser.email } : {}
     );
     const [profile, setProfile] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const loadProfile = async () => {
-      setIsLoaded(false);
+      setLoaded(false);
 
       try {
         if(!user) return setProfile();
@@ -26,14 +26,14 @@ export const UserProvider = ({ children }) => {
         setProfile(null);
       }
       finally {
-        setIsLoaded(true);
+        setLoaded(true);
       }
     };
 
     loadProfile();  
   }, [user]);
 
-  const value = { user, setUser, profile, setProfile, isLoaded };
+  const value = { user, setUser, profile, setProfile, loaded };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };

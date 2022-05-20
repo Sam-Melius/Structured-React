@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import Profile from '../../components/Profile/Profile';
 import ProfileForm from '../../components/Profile/ProfileForm';
 import { useUser } from '../../hooks/user';
@@ -12,11 +12,13 @@ export default function ProfileView() {
       await create(profile);
   };
 
-  return (
-    <CreateProfile
-        email={user.email}
-        onCreate={handleCreate} />
-  );
+  return hasProfile 
+    ? <ShowProfile profile={profile} /> 
+    : <CreateProfile 
+      email={user.email} 
+      onCreate={handleCreate} 
+    />;
+}
 
   function CreateProfile({ email, onCreate }) {
     return (
@@ -26,11 +28,17 @@ export default function ProfileView() {
             onSubmit={onCreate}
             email={email} />
         </>
-    )
-
-    
+    )    
   }
 
-  
+  function ShowProfile({ profile }) {
+    return (
+      <>
+        <Link to="/profile/edit">
+          <button>Edit Profile</button>
+        </Link>
+        <Profile profile={profile} />
+      </>
+    );  
 
 }
