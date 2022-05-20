@@ -7,7 +7,7 @@ export default function NoteForm({
   onSubmit,
 }) {
   
-  const { title = '',  note = '' } = note;
+  const { title = '',  description = '' } = note;
   const { formState, handleChange } = useForm({ title, description });
   const [saving, setSaving] = useState(false);
 
@@ -41,7 +41,7 @@ export default function NoteForm({
           <label htmlFor="name">Note</label>
           <textarea
             id="note"
-            name="note"
+            name="description"
             type="text"
             value={formState.description}
             onChange={handleChange}

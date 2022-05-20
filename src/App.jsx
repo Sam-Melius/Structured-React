@@ -1,10 +1,14 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { UserProvider } from "./context/UserContext";
+import { NotesProvider } from "./context/NotesContext";
 import Auth from "./views/Auth/Auth";
 import Home from "./views/Home/Home";
 import ProfileView from "./views/Profile/ProfileView";
+import EditProfile from './views/Profile/EditProfile';
 import Header from "./components/Header/Header";
+import ViewNotes from './views/Notes/ViewNotes';
+import AddNote from './views/Notes/AddNote';
 
 
 export default function App() {
@@ -20,8 +24,17 @@ export default function App() {
           <Route path="/register">
             <Auth isSigningUp />
           </Route>
+          <PrivateRoute path="/profile/edit">
+            <EditProfile />
+          </PrivateRoute>
           <PrivateRoute path="/profile">
             <ProfileView />
+          </PrivateRoute>
+          <PrivateRoute exact={true} path='/notes'>
+            <ViewNotes />
+          </PrivateRoute>
+          <PrivateRoute exact={true} path='/notes/add'>
+            <AddNote />
           </PrivateRoute>
           <Route path="/">
             <Home />

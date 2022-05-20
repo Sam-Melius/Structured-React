@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 import { signInUser, signUpUser, signOutUser } from '../services/users';
-import { getProfile, createProfile, updateProfile } from '../services/profiles';
+import { createProfile, updateProfile } from '../services/profiles';
 
 export const useAuth = () => {
     const context = useContext(UserContext);
