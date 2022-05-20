@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function userForm(inputs = {}) {
+export default function useForm(inputs = {}) {
   const [formState, setFormState] = useState(inputs);
 
   const handleChange = (e) => {
@@ -9,7 +9,7 @@ export default function userForm(inputs = {}) {
       setFormState((prevState) => {
           return {
               ...prevState,
-              [name]: type ==='checkbox' ? checked : value
+              [name]: type === 'checkbox' ? checked : value
           };
       });
   };
