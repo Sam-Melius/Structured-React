@@ -31,20 +31,13 @@ export default function ProfileForm({ name = '', email, bio = '', onSubmit }) {
         <section>
             <label htmlFor='email'>Email</label>
             <p>{email}</p>
-            <input
-                id='email'
-                email='email'
-                type='text'
-                value={formState.email}
-                onChange={handleChange} />
         </section>
         <section>
             <label htmlFor='bio'>Bio</label>
             <p>{bio}</p>
-            <input
+            <textarea
                 id='bio'
-                bio='bio'
-                type='text'
+                name='bio'
                 value={formState.bio}
                 onChange={handleChange} />
         </section>

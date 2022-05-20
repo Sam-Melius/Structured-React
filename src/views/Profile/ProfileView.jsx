@@ -8,6 +8,8 @@ export default function ProfileView() {
 
   if(!loaded) return null;
 
+  const hasProfile = user && profile;
+
   const handleCreate = async (profile) => {
       await create(profile);
   };
