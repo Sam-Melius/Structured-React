@@ -16,7 +16,7 @@ export default function Header() {
         {loggedIn ? (
             <>
             <span>Signed in as</span>
-            <span>{profile?.name || user.email}</span>
+            <span> {profile?.name || user.email}</span>
             </>
         ) : (
             <span>Not signed in</span>

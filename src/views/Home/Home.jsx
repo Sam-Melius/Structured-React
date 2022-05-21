@@ -6,6 +6,10 @@ export default function Home() {
 
   return (
     <>
+    <p>
+      Notes:
+      <Link to='/notes'>Make a note</Link>
+    </p>
           {loggedIn ? (
         <Link to="/profile">View your profile</Link>
       ) : (

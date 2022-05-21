@@ -8,13 +8,17 @@ import ProfileView from "./views/Profile/ProfileView";
 import EditProfile from './views/Profile/EditProfile';
 import Header from "./components/Header/Header";
 import ViewNotes from './views/Notes/ViewNotes';
+import ViewNote from './views/Notes/ViewNote';
 import AddNote from './views/Notes/AddNote';
+import EditNote from './views/Notes/EditNote';
+import CopyNote from './views/Notes/CopyNote';
 
 
 export default function App() {
   return (
     <>
     <UserProvider>
+      <NotesProvider>
       <Router>
         <Header />
         <Switch>
@@ -30,17 +34,28 @@ export default function App() {
           <PrivateRoute path="/profile">
             <ProfileView />
           </PrivateRoute>
-          <PrivateRoute exact={true} path='/notes'>
+          <PrivateRoute exact={true} path="/notes">
             <ViewNotes />
           </PrivateRoute>
-          <PrivateRoute exact={true} path='/notes/add'>
+          <PrivateRoute exact={true} path="/notes/add">
             <AddNote />
+          </PrivateRoute>
+          <PrivateRoute exact={true} path="/notes/:id">
+            <ViewNote />
+          </PrivateRoute>
+          <PrivateRoute exact={true} path="/notes/:id/edit">
+            <EditNote />
+          </PrivateRoute>
+          <PrivateRoute exact={true} path="/notes/:id/copy">
+            <CopyNote />
           </PrivateRoute>
           <Route path="/">
             <Home />
           </Route>
         </Switch>
       </Router>
+      </NotesProvider>
+      
     </UserProvider>
     </>
   );

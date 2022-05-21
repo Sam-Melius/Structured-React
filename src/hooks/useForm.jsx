@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 export function useForm(inputs = {}) {
-  const [formState, setFormState] = useState(inputs);
+  const [formState, setFormState] = useState({ ...inputs });
 
   const handleChange = (e) => {
       const { name, value, type, checked } = e.target;

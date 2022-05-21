@@ -11,7 +11,7 @@ function reducer(notes, { type, payload }) {
         case 'update':
             return notes.map((note) => (note.id === payload.id ? payload : note));
         case 'delete':
-            return notes.filter((note) => moveTo.id !== payload.id);
+            return notes.filter((note) => note.id !== payload.id);
         default:
             throw Error(`Unknown action: ${type}`);
     }

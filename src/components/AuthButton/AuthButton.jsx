@@ -7,11 +7,11 @@ export default function AuthButton({ className }) {
   return (
     <>
       {loggedIn ? (
-        <button className={className} onClick={signOut}>
+        <button onClick={signOut}>
           Sign Out
         </button>
       ) : (
-        <Link to="/login" className={className}>
+        <Link to="/login">
           <button>Sign In</button>
         </Link>
       )}

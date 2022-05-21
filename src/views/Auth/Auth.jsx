@@ -34,8 +34,10 @@ export default function Auth({ isSigningUp = false }) {
 
   return (
     <section>
+    
         <UserForm
         onSubmit={handleSubmit}
+        label={options.label}
       />
       <p>{options.message}</p>
     </section>

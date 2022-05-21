@@ -24,7 +24,7 @@ export default function NoteForm({
 
   return (
     <form onSubmit={handleSubmit}>
-      <fieldset className={styles.form}>
+      <fieldset>
         <legend>{label}</legend>
         <section>
           <label htmlFor="name">Title</label>
@@ -40,7 +40,7 @@ export default function NoteForm({
         <section>
           <label htmlFor="name">Note</label>
           <textarea
-            id="note"
+            id="description"
             name="description"
             type="text"
             value={formState.description}

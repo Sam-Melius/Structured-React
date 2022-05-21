@@ -33,7 +33,7 @@ export const UserProvider = ({ children }) => {
     loadProfile();  
   }, [user]);
 
-  const value = { user, setUser, profile, setProfile, loaded };
+  const value = { user, setUser, profile, loaded, setProfile, };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };

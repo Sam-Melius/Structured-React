@@ -17,7 +17,7 @@ export default function NoteList({ notes }) {
         return (
           <NoteItem 
             key={note.id} 
-            Note={note}
+            note={note}
           />
         );
       })}

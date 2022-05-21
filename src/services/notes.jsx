@@ -1,8 +1,9 @@
 import { client, parseData } from './client';
 
-function mapFrom({ created_at, profiles, ...rest}) {
+function mapFrom({ created_at, user_id, profiles, ...rest}) {
     return {
         created: created_at,
+        userId: user_id,
         name: profiles?.name,
         ...rest
     };
@@ -15,7 +16,7 @@ function mapTo({ created, userId, name, ...rest}) {
 export async function getNotes() {
     const request = await client
         .from('notes')
-        .select(`id, created_at, note, profiles (name)`);
+        .select(`id, title, created_at, user_id, profiles (name)`);
     const data = parseData(request);
     return data.map(mapFrom);
 
@@ -34,7 +35,7 @@ export async function updateNote(note) {
     const request = await client
         .from('notes')
         .update(mapTo(note))
-        .mathc({ id: note.id })
+        .match({ id: note.id })
         .single();
     const data = parseData(request);
     return mapFrom(data);
