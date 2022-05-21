@@ -3,7 +3,7 @@ import { useAuth } from '../../hooks/user';
 
 export default function NoteItem({ note }) {
   const { user } = useAuth();
-  const {id, title, userId, created } = note;
+  const {id, title, name, userId, created } = note;
   const isOwner = user.id === userId;
   const date = new Date(created);
   const action = isOwner ? 'edit' : 'copy';
@@ -16,7 +16,7 @@ export default function NoteItem({ note }) {
         {title}
       </Link>
 
-      {/* <span>{isOwner ? 'you' : name}</span> */}
+      <span>{isOwner ? 'you' : name}</span>
 
       <span>
         <Link to={`/notes/${id}/${action}`}>
