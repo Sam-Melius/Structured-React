@@ -53,8 +53,8 @@ export function useNote(id) {
     useEffect(() => {
       const load = async () => {
         try {
-          const note = await getNote(id);
-          setNote(note);
+          const newNote = await getNote(id);
+          setNote(newNote);
         }
         catch (err) {
           toast.error(err.message);

@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom';
-import { useNotes } from '../../hooks/Notes';
+import { useNotes } from '../../hooks/notes';
 import NoteForm from '../../components/Notes/NoteForm';
 
 export default function AddNote() {
